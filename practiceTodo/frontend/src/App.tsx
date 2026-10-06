@@ -1,8 +1,9 @@
 import React from 'react'
 import { Route, Routes } from 'react-router'
 import HomePage from './pages/HomePage'
-import CreatePage from './pages/CreatePage'
 import EditPage from './pages/EditPage'
+import ContactPage from './pages/ContactPage'
+import PageNotFound from './pages/PageNotFound'
 
 const App = () => {
 
@@ -21,16 +22,14 @@ const App = () => {
   // }
 
 
-  <Routes>
-    <Route path='/' element={<HomePage />} />
-    <Route path='/create' element={<CreatePage />} />
-    <Route path='/edit' element={<EditPage />} />
-  </Routes>
-
-
   return (
-    <div>
-      
+    <div className='min-h-screen bg-gray-800 p-10'>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/edit' element={<EditPage />} />
+        <Route path='/contact' element={<ContactPage />} />
+        <Route path='*' element={<PageNotFound />} />
+      </Routes>
     </div>
   )
 }
