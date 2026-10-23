@@ -9,7 +9,7 @@ const app = express()
 app.use(express.json())
 app.use(morgan("dev"))
 app.use(cors({
-    origin: "localhost:5173"
+    origin: "http://localhost:5173"
 }))
 
 app.use('/api/products', productRouter) // configure routes
